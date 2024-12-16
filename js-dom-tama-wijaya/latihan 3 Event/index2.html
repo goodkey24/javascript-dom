@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan DOM Event</title>
+</head>
+<body>
+<h1 id="page-title">Header</h1>
+<p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Adipisci Consectetur dolore modi officia repellat saepe suscipit totam veniam.
+    Accusantium dignissimos error est laborum libero nisi non repellendus soluta
+    veritatis. A, eos.</p>
+<p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+    aspernatur corporis, labore maxime pariatur quas rem tenetur vero! Amet
+    aut distinctio esse iusto nulla obcaecati, quis repudiandae sint velit vitae.</p>
+<button id="toggle-btn">Hide Content</button>
+
+<script>
+    // Pilih elemen tombol dan paragraf
+    let toggleBtn = document.querySelector('#toggle-btn');
+    let contents = document.querySelectorAll('.content');
+
+    // Status awal: elemen terlihat
+    let isVisible = true;
+
+    // Tambahkan event listener pada tombol
+    toggleBtn.addEventListener("click", function () {
+        if (isVisible) {
+            // Sembunyikan elemen dan ubah teks tombol
+            contents.forEach(elemen => {
+                elemen.style.visibility = "hidden";
+            });
+            toggleBtn.textContent = "Show Content";
+        } else {
+            // Tampilkan elemen dan ubah teks tombol
+            contents.forEach(elemen => {
+                elemen.style.visibility = "visible";
+            });
+            toggleBtn.textContent = "Hide Content";
+        }
+
+        // Setelah aksi dilakukan, status isVisible diubah ke nilai yang berlawanan menggunakan
+        isVisible = !isVisible;
+    });
+</script>
+</body>
+</html>
