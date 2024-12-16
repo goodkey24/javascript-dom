@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan DOM Event</title>
+</head>
+<body>
+<form>
+    <label for="username">Username</label>
+    <input type="text" id="username" required>
+    <button id="submit-btn">Tombol</button>
+</form>
+<p id="output"></p>
+
+<script>
+    // let input = document.querySelector('#username');
+    // let button = document.querySelector('#submit-btn');
+    // let output = document.querySelector('#output');
+    //
+    // button.addEventListener('click',
+    //     function (e) {
+    //         e.preventDefault();
+    //         let newParagraf = document.createElement('p');
+    //         newParagraf.id = "output";
+    //         newParagraf.textContent = input.value;
+    //         output.appendChild(newParagraf);
+    //     })
+
+    document.getElementById('submit-btn').onclick = function (e) {
+        e.preventDefault();
+        let input = document.getElementById('username');
+        let output = document.getElementById('output');
+        output.textContent = input.value;
+    }
+</script>
+</body>
+</html>
